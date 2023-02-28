@@ -1,5 +1,5 @@
 #include <iostream>
-#include "shared/Quantum.h"
+#include "static/Quantum.h"
 
 void Quantum::print_version()
 {
