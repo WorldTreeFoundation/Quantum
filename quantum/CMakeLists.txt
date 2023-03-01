@@ -47,3 +47,32 @@ target_link_libraries(quantum_binary
     PRIVATE
     quantum::library
 )
+
+# ###########################################################
+# Unit tests
+# ###########################################################
+
+add_subdirectory(3rd_party/google-test)
+
+# enable CTest testing
+enable_testing()
+
+# Add a testing executable
+set(UNIT_TEST unit_tests)
+add_executable(${UNIT_TEST} tests/unit_tests.cpp)
+
+target_link_libraries(${UNIT_TEST}
+    quantum_library
+    GTest::GTest 
+    GTest::Main
+)
+
+add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
+
+add_custom_command(
+     TARGET ${UNIT_TEST}
+     COMMENT "Run tests"
+     POST_BUILD 
+     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+     COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIGURATION> -R "^${UNIT_TEST}$"
+)
