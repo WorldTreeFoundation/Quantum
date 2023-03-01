@@ -37,3 +37,8 @@ TEST_F(WaveFunctonTests, measure_at_test)
         EXPECT_EQ(wf->measure_at(p), expected);
     }
 }
+
+TEST_F(WaveFunctonTests, complementary_events_sum)
+{
+    EXPECT_EQ(wf->complementary_events_sum(), 1);
+}

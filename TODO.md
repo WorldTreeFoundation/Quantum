@@ -13,3 +13,4 @@
 - class `WaveFunction` (interface) ✅
   - measure_at method ✅
   - complementary_events_sum method ✅
+  - tests ✅
