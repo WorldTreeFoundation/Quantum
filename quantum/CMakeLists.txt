@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 # ###########################################################
 # Project declaration
 # ###########################################################
-file(READ "include/static/version.h" ver)
+file(READ "include/quantum/version.h" ver)
 
 string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${ver})
 set(ver_major ${CMAKE_MATCH_1})
