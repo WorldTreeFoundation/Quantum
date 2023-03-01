@@ -3,8 +3,6 @@
 
 class Quantum
 {
-public:
-    void print_version();
 };
 
 #endif
