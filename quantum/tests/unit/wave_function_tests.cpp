@@ -34,7 +34,6 @@ TEST_F(WaveFunctonTests, measure_at_test)
     for (int i = -1; i < 3; i++) {
         p = Point<int, 1>({i});
         int expected = (i == 1) ? 1 : 0;
-        std::cout << "HERE " << expected << " " << wf->measure_at(p) << std::endl;
         EXPECT_EQ(wf->measure_at(p), expected);
     }
 }
