@@ -5,3 +5,4 @@
 #define VERSION_PATCH 0
 
 #include "world/World.h"
+#include "point/Point.h"
