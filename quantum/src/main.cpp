@@ -2,6 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    Quantum q;
+    World w;
+    w.print_hello();
     return 0;
 }

@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 # ###########################################################
 # Project declaration
 # ###########################################################
-file(READ "include/quantum/version.h" ver)
+file(READ "include/quantum/Quantum.h" ver)
 
 string(REGEX MATCH "VERSION_MAJOR ([0-9]*)" _ ${ver})
 set(ver_major ${CMAKE_MATCH_1})
@@ -24,7 +24,7 @@ message("Quantum version: ${PROJECT_VERSION}")
 
 # Generate the shared library from the library sources
 add_library(quantum_library STATIC
-    src/Quantum.cpp
+    src/World.cpp
 )
 add_library(quantum::library ALIAS quantum_library)
 

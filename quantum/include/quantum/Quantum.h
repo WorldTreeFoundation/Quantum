@@ -1,8 +1,7 @@
-#ifndef __QUNATUM_H__
-#define __QUNATUM_H__
+#pragma once
 
-class Quantum
-{
-};
+#define VERSION_MAJOR 0
+#define VERSION_MINOR 0
+#define VERSION_PATCH 0
 
-#endif
+#include "world/World.h"
