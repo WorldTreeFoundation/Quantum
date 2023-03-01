@@ -59,7 +59,7 @@ enable_testing()
 
 # Add a testing executable
 set(UNIT_TEST unit_tests)
-add_executable(${UNIT_TEST} tests/unit_tests.cpp)
+add_executable(${UNIT_TEST} tests/unit/wave_function_tests.cpp)
 
 target_link_libraries(${UNIT_TEST}
     quantum_library
