@@ -38,7 +38,7 @@ TEST_F(WaveFunctonTests, measure_at_test)
     }
 }
 
-TEST_F(WaveFunctonTests, complementary_events_sum)
+TEST_F(WaveFunctonTests, complementary_events_sum_test)
 {
     EXPECT_EQ(wf->complementary_events_sum(), 1);
 }
