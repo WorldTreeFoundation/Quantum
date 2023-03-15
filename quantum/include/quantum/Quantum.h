@@ -7,3 +7,4 @@
 #include "world/World.h"
 #include "point/Point.h"
 #include "wave_function/wave_function.h"
+#include "quant/Quant.h"
