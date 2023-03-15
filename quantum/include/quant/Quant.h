@@ -4,7 +4,7 @@ template <typename T, unsigned int n>
 class Quant
 {
 public:
-	// To create a Quant, you need to pass an instance of a class that 
+	// To create a Quant, you need to pass an instance of a class that
 	// implements the WaveFunction interface
 	Quant(WaveFunction<T, n> *wave_function) : wave_function(wave_function) {}
 
@@ -14,5 +14,5 @@ public:
 	float measure_at(Point<T, n> p) { return wave_function->measure_at(p); }
 
 private:
-    mutable WaveFunction<T, n> *wave_function;
+	mutable WaveFunction<T, n> *wave_function;
 };
