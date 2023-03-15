@@ -1,15 +1,14 @@
 #include <gtest/gtest.h>
-#include "wave_function/wave_function.h"
-#include "point/Point.h"
+#include "quantum/Quantum.h"
 #include <iostream>
 
 class TestWF: public WaveFunction<int, 1>
 {
 public:
-    float measure_at(Point<int, 1> &p) {
+    float measure_at(Point<int, 1> &p) const override {
         return (p[0] == 1) ? 1 : 0;
     }
-    float complementary_events_sum() { return 1; }
+    float complementary_events_sum() const override { return 1; }
 };
 
 class WaveFunctonTests : public ::testing::Test
@@ -19,7 +18,7 @@ protected:
 
     virtual void SetUp()
     {      
-        wf = new TestWF();
+        wf = new TestWF;
     }
     virtual void TearDown()
     {
