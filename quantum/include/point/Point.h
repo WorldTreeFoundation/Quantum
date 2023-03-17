@@ -9,10 +9,7 @@ public:
     Point(std::array<T, n> coords) : coords(coords) {}
     ~Point() {}
 
-    T operator[](const size_t &i) const
-    {
-        return coords[i];
-    }
+    T operator[](const size_t &i) const{ return coords[i]; }
 
 public:
     // Point's coordinates

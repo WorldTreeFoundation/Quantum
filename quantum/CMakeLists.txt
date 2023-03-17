@@ -24,7 +24,7 @@ message("Quantum version: ${PROJECT_VERSION}")
 
 # Generate the shared library from the library sources
 add_library(quantum_library STATIC
-    src/World.cpp
+    src/Quantum.cpp
 )
 add_library(quantum::library ALIAS quantum_library)
 
