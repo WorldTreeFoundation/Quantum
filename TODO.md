@@ -1,5 +1,7 @@
 # TODO
 
+Hash function for Point pointer (Point.h)
+
 - class `World`:
   - points: array[Point]
   - quants: array[Quant]

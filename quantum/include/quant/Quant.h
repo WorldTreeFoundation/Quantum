@@ -1,4 +1,5 @@
 #pragma once
+#include "wave_function/wave_function.h"
 
 template <typename T, unsigned int n>
 class Quant
