@@ -17,18 +17,22 @@ private:
     // Point's coordinates
     mutable std::array<T, n> coords;
 
-    // TODO (Timur)
-    // template <typename Tt, unsigned int nn>
-    // friend class PointPtrHash;
+    template <typename Tt, unsigned int nn>
+    friend class PointPtrHash;
 };
 
-// TODO (Timur)
-// template <typename T, unsigned int n>
-// class PointPtrHash
-// {
-// public:
-//     size_t operator()(const Point<T, n> *point) const
-//     {
-//         return std::hash<std::array<T, n>>{}(point->coords);
-//     }
-// };
+template <typename T, unsigned int n>
+struct PointPtrHash
+{
+    size_t operator()(const Point<T, n> *point) const
+    {
+        // NOTE (Timur): better to check one more time
+        // or use boost::hash
+        std::hash<T> hasher;
+        size_t result = 144451;
+        for(size_t i = 0; i < point->coords.size(); ++i) {
+            result = (result << 1) ^ hasher(point->coords[i]);
+        }
+        return result;
+    }
+};

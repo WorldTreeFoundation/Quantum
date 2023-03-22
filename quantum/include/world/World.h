@@ -9,17 +9,13 @@ template <typename T, unsigned int n>
 using QuantSet = std::unordered_set<Quant<T, n> *>;
 
 template <typename T, unsigned int n>
-using PointSet = std::unordered_set<Point<T, n> *>;
-// TODO (Timur)
-// using PointSet = std::unordered_set<Point<T, n> *, PointPtrHash<T, n>>;
+using PointSet = std::unordered_set<Point<T, n> *, PointPtrHash<T, n>>;
 
 template <typename T, unsigned int n>
 using PossibilitiesMap = std::unordered_map<Quant<T, n> *, PointSet<T, n>>;
 
 template <typename T, unsigned int n>
-using EntanglementsMap = std::unordered_map<Point<T, n> *, PointSet<T, n>>;
-// TODO (Timur)
-// using EntanglementsMap = std::unordered_map<Point<T, n> *, PointSet<T, n>, PointPtrHash<T, n>>;
+using EntanglementsMap = std::unordered_map<Point<T, n> *, PointSet<T, n>, PointPtrHash<T, n>>;
 
 template <typename T, unsigned int n>
 class World
