@@ -15,13 +15,11 @@ public:
 int main(int argc, char *argv[])
 {
     World<int, 1> w;
-    w.place_quant(
-        {new TestWF},
-        {{{1}}, {{2}}}
-    );
-    w.place_quant(
-        {new TestWF},
-        {{{2}}, {{3}}}
-    );
+    // TODO
+    auto quant = w.create_quant<TestWF>();
+    auto point1 = w.create_point({0});
+    auto point2 = w.create_point({0});
+    w.place_quant(quant, {point1, point2});
+
     return 0;
 }

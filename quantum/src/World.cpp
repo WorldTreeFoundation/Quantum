@@ -8,22 +8,24 @@ template <typename T, unsigned int n>
 World<T, n>::~World() {}
 
 template <typename T, unsigned int n>
-void World<T, n>::place_quant(Quant<T, n> quant, std::vector<Point<T, n>> points)
+void World<T, n>::place_quant(
+    Quant<T, n> *quant,
+    std::vector<Point<T, n> *> points
+)
 {
-    Quant<T, n> *quant_ptr = &quant;
+    // TODO: isolate quant and points insertion to create_quant and create_point
+    quants.insert(quant);
 
-    quants.insert(quant_ptr);
-
-    if (!possibilities.contains(quant_ptr))
+    if (!possibilities.contains(quant))
     {
-        possibilities[quant_ptr] = {};
+        possibilities[quant] = {};
     }
 
     for (int i = 0; i < points.size(); i++)
     {
-        Point<T, n> *point_ptr = &points[i];
+        Point<T, n> *point_ptr = points[i];
 
-        possibilities[quant_ptr].insert(point_ptr);
+        possibilities[quant].insert(point_ptr);
 
         space.insert(point_ptr);
 
@@ -37,8 +39,8 @@ void World<T, n>::place_quant(Quant<T, n> quant, std::vector<Point<T, n>> points
     {
         for (int j = i + 1; j < points.size(); j++)
         {
-            entanglements[&points[i]].insert(&points[j]);
-            entanglements[&points[j]].insert(&points[i]);
+            entanglements[&points[i]].insert(points[j]);
+            entanglements[&points[j]].insert(points[i]);
         }
     }
 }
